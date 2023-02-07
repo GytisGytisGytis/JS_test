@@ -55,9 +55,17 @@
 
 
 
+const box1 = document.querySelector(".box1")
+const main = document.querySelector(".main")
+const inputs = document.querySelectorAll("input")
+const btnPreview = document.getElementById(`btnPreview`)
 
-
-
+let imageLink = ""
+let inputsValue = []
+//
+// btnPreview.onclick = () => {
+//
+// }
 
 const getProducts = () => {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -72,7 +80,50 @@ const getProducts = () => {
 getProducts()
 
 
+btnPreview.onclick = () => {
+    let item = {
+        title: inputs[0].value,
+        ingredient: inputs[1].value,
+        description: inputs[2].value,
+        colories: inputs[3].value,
+        image: imageLink,
+    }
 
+    inputsValue.push(item)
+    console.log(item)
+    getPreview()
+}
+
+function getPreview() {
+    box1.innerHTML =""
+
+    inputsValue.map(item => {
+
+        box1.innerHTML += `
+            <div class="box d-flex flex-column">
+            <div class="d-flex">
+                <img src=${item.image} alt="">
+                <div class="d-flex mt10 flex-column">
+                    <h5>Title: ${item.title}</h5>
+                    <h5>Description: ${item.description}</h5>
+                </div>
+    
+            </div>
+            <div>
+                <h5>Ingredient 1: ${item.ingredient}</h5>
+                <h5>Ingredient 2: ${item.ingredient}</h5>
+                <h5>Ingredient 3: ${item.ingredient}</h5>
+                <h5>Colories: ${item.colories}</h5>
+            </div>
+            <div class="d-flex flex-column mt70">
+                <button class="btnList">ADD RECIPE TO LIST</button>
+            </div>
+    
+    
+        </div>
+        `
+    })
+}
 
 
 

@@ -141,26 +141,61 @@
 // git commit -m "messge" (create commit with message)
 //     git push (push code to remote)
 
+//
+// const main = document.querySelector(".main")
+// const card1 = document.querySelector(".card1")
+// const card2 = document.querySelector(".card2")
+// const btn = document.querySelector('button')
+//
+// let someCards = {}
+// let cards = []
+//
+//
+// btn.onclick = () => {
+//
+//     fetch("https://www.boredapi.com/api/activity")
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log("some")
+//             someActivities = data
+//             addActivities(data)
+//         })
+// }
 
-const main = document.querySelector(".main")
-const card1 = document.querySelector(".card1")
-const card2 = document.querySelector(".card2")
-const btn = document.querySelector('button')
-
-let someCards = {}
-let cards = []
 
 
-btn.onclick = () => {
 
-    fetch("https://www.boredapi.com/api/activity")
-        .then(res => res.json())
-        .then(data => {
-            console.log("some")
-            // someActivities = data
-            // addActivities(data)
-        })
-}
+
+
+// JS test 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
